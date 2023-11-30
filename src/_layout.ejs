@@ -7,10 +7,10 @@
         <title><%= page.title %></title>
     </head>
     <body>
-        <main>
-            <% (page.sections || []).forEach((section, index) => { %>
-            <div><%- component(section) %></div>
+        <main data-sb-object-id="<%- page._meta.id %>">
+          <% (page.sections || []).forEach((section, index) => { %>
+            <div data-sb-field-path="sections.<%- index %>"><%- component(section) %></div>
             <% }) %>
         </main>
-    </body>
+      </body>
 </html>
